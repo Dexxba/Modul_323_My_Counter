@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="Main body">
+<header class="header">
+    <h3>M_323 - My Counter</h3>
+</header>
+<div class="the-counter">
+    <div class="counter-controles">
+  <button id="decrease">- Decrease</button>
+  <span id="count">0</span>
+  <button id="increase">+ Increase</button>
+    </div>
+  <button id="reset">Reset</button>  
+</div> 
+<footer class="footer">
+    <h3>Counting stuff since 1921</h3>
+</footer>
+<script>
+    const countNumber = document.getElementById('count');
+    let counter = 0;
+    function updateCounter(){
+        countNumber.textContent = "Count :" + counter;
+    }
+    // increase button functionality
+    document.getElementById("increase").addEventListener("click", () => {
+        counter+=1;
+        updateCounter();
+    });
+    
+    // decrease button functionality
+    document.getElementById("decrease").addEventListener("click", () =>{
+       if(counter > 0){
+           counter -= 1;
+           updateCounter()
+       }
+    });
+
+    // reset button functionality
+    document.getElementById("reset").addEventListener("click", ()=>{
+        counter = 0;
+        updateCounter();
+    });
+    updateCounter();
+</script>
+</body>
+</html>
